@@ -49,12 +49,39 @@
     component: './TableList',
   },
   {
-    name: 'monitor',
-    layout: false,
-    target: '_blank',
+    name: '监控列表',
     icon: 'table',
     path: '/monitor',
-    component: './monitor',
+    routes: [
+      {
+        name: 'jvm监控',
+        path: '/monitor/jvm',
+        component: './monitor/jvm-monitor-list',
+      },
+      {
+        name: 'JVM监控明细',
+        layout: false,
+        target: '_blank',
+        hideInMenu: true,
+        icon: 'table',
+        path: '/monitor/jvm/info',
+        component: './monitor/jvm-monitor-info',
+      },
+      {
+        name: 'point监控',
+        path: '/monitor/point',
+        component: './monitor/point-monitor-list',
+      },
+      {
+        name: '接口监控',
+        layout: false,
+        target: '_blank',
+        hideInMenu: true,
+        icon: 'table',
+        path: '/monitor/point/info',
+        component: './monitor/point-monitor-info',
+      },
+    ],
   },
   {
     path: '/',
